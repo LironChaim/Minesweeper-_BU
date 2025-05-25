@@ -1,0 +1,60 @@
+body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+h2 {
+    font-color: black;
+    
+}
+
+
+table {
+    
+    margin: 100px auto;
+    border: 1px solid black;
+    
+}
+
+.cell {
+
+    border:1px solid black;
+}
+
+.cell.revealed {
+  background: #ddd;
+  cursor: default;
+}
+
+.board td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transition: 0.5s;
+    border: 1px solid rgb(54, 54, 54);
+    cursor: pointer;
+}
+
+.smiley {
+
+    
+}
+
+.board td:hover {
+    background-color: lightsalmon;
+}
+
+/* 
+.occupied {
+    background-color: lightgray;
+}
+
+
+/* [data-name="puki"] {
+    color: rgb(17, 0, 255);
+} */
+
+
+/* [data-name="puki"][data-age="18"] {
+    background-color: red;
+} */ 

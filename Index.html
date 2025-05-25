@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine sweepr</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<body onload="onInit()" >
+    <h1> Minesweeper</h1>
+ <div>
+     <h2>Level:<span>Easy</span></h2>
+     <button>Restart</button>
+ </div>  
+ <div class="game-info">
+  <button class="smiley" onclick="onInit()">😃</button>
+  <span>Lives: <span id="lives-count">3</span></span>
+</div>
+
+<table>
+  <tbody class="board"></tbody>
+</table>
+<div>
+
+    <table>
+        <tbody class="board"></tbody>
+    </table>
+    
+</div>
+
+   
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
