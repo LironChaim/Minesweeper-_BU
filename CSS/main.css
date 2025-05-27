@@ -1,60 +1,121 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+/* Color Variables */
+:root {
+  --bg-color:    #fff;
+  --text-color:  #000;
+  --cell-bg:     #eee;
+  --cell-border: #888;
+}
+body.dark-mode {
+  --bg-color:    #222;
+  --text-color:  #ddd;
+  --cell-bg:     #444;
+  --cell-border: #666;
+}
+
+/* Headings */
+h1, h2 {
+  margin: 1rem 0;
 }
 h2 {
-    font-color: black;
-    
+  /* font-color שגוי – צריך color */
+  color: #000;
+  font-size: 1.2rem;
 }
 
+/* Game Info Panel */
+.game-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
 
+/* Mode Status */
+.mode-status {
+  margin-left: 1rem;
+  font-weight: bold;
+  color: #c33;
+}
+body.manual-mode .mode-status {
+  color: #3c3;
+}
+
+/* Table & Board */
 table {
-    
-    margin: 100px auto;
-    border: 1px solid black;
-    
+  margin: 0 auto 2rem;
+  border-collapse: collapse;
 }
 
-.cell {
-
-    border:1px solid black;
+/* כלל שמשפיע על כל תאי הלוח */
+.board td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--cell-border);
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2em;
+  cursor: pointer;
+  background: var(--cell-bg);
+  transition: background 0.3s, border-color 0.3s;
 }
 
+/* hover */
+.board td:hover {
+  background-color: lightsalmon;
+}
+
+/* תאים שנחשפו – גם בכללי .board וגם ב־.cell */
+.board td.revealed,
 .cell.revealed {
-  background: #ddd;
+  background: var(--bg-color) !important;
   cursor: default;
 }
 
-.board td {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    transition: 0.5s;
-    border: 1px solid rgb(54, 54, 54);
-    cursor: pointer;
+/* Buttons */
+.smiley,
+#theme-toggle,
+#manual-btn,
+#undo-btn,
+.safe-btn,
+.mega-hint-btn,
+.hint {
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
-.smiley {
-
-    
+.levels {
+  display: inline-block;
+  margin: 0 1rem;
 }
-
-.board td:hover {
-    background-color: lightsalmon;
+.level-btn {
+  padding: .3rem .6rem;
+  margin: 0 .2rem;
+  cursor: pointer;
+  opacity: .7;
 }
-
-/* 
-.occupied {
-    background-color: lightgray;
+.level-btn.selected {
+  font-weight: bold;
+  opacity: 1;
+  text-decoration: underline;
 }
-
-
-/* [data-name="puki"] {
-    color: rgb(17, 0, 255);
-} */
-
-
-/* [data-name="puki"][data-age="18"] {
-    background-color: red;
-} */ 

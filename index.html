@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="./CSS/main.css" />
+</head>
+<body onload="onInit()">
+    <h1> Minesweeper</h1>
+  <div class="game-info">
+    
+    <!-- Level selector -->
+    <div class="levels">
+      <button class="level-btn" onclick="onLevelSelect('Beginner')">Beginner</button>
+      <button class="level-btn" onclick="onLevelSelect('Medium')">Medium</button>
+      <button class="level-btn" onclick="onLevelSelect('Help Me God')">Expert</button>
+    </div>
+
+    <!-- Smiley / Restart -->
+    <button class="smiley" onclick="onInit()">😃</button>
+    <!-- Mode Status -->
+    <span id="mode-status" class="mode-status"></span>
+    <!-- Manual placement -->
+    <button id="manual-btn" onclick="onManualModeClick()">✏️ Place Mines</button>
+    <span id="manual-count">–</span>
+    <!-- Timer & Best -->
+    <span>Time: <span id="timer">0</span>s</span>
+    <span>Best (<span id="level-name">Beginner</span>): <span id="best-score">–</span>s</span>
+    <!-- Lives / Undo -->
+    <span>Lives: <span id="lives-count">3</span></span>
+    <button id="undo-btn" onclick="onUndoClick()" disabled>↶ Undo</button>
+    <!-- Hints / Safe / Mega / Theme -->
+    <div class="hints">
+      Hints:
+      <button class="hint" onclick="onHintClick(this)" data-idx="0">💡</button>
+      <button class="hint" onclick="onHintClick(this)" data-idx="1">💡</button>
+      <button class="hint" onclick="onHintClick(this)" data-idx="2">💡</button>
+    </div>
+    <div class="safe-click">
+      Safe-Click:
+      <button class="safe-btn" id="safe-btn" onclick="onSafeClick()">3</button>
+    </div>
+    <div class="mega-hint">
+      <button class="mega-hint-btn" onclick="onMegaHintClick()">💥</button>
+      <span id="mega-count">1</span>
+    </div>
+    <button id="theme-toggle" onclick="toggleDarkMode()">🌙</button>
+  </div>
+
+  <table><tbody class="board"></tbody></table>
+
+    <script src="./JS/game.js"></script>
+    <script src="./JS/utils.js"></script>
+
+</body>
+</html>
